@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>webconsole</artifactId>
+		<groupId>org.danielsoft.osgi.enterprise</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>webconsole-runner</artifactId>
+	<packaging>pom</packaging>
+	<name>OSGi Web Console - OSGi Framework Runner(s)</name>
+
+	<properties>
+		<felix.http.version>2.2.0</felix.http.version>
+	</properties>
+
+	<dependencies>
+		<!-- Internal -->
+		<dependency>
+			<groupId>org.danielsoft.osgi.enterprise</groupId>
+			<artifactId>webconsole-extjs-wrapper</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.danielsoft.osgi.enterprise</groupId>
+			<artifactId>webconsole-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.danielsoft.osgi.enterprise</groupId>
+			<artifactId>webconsole-extension-hello</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.danielsoft.osgi.enterprise</groupId>
+			<artifactId>webconsole-extension-weather</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.danielsoft.osgi.enterprise</groupId>
+			<artifactId>webconsole-extension-chart</artifactId>
+		</dependency>
+		<!-- OSGi HTTP Service implementation (for auction-buyer-http) -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.api</artifactId>
+			<version>${felix.http.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.base</artifactId>
+			<version>${felix.http.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.bundle</artifactId>
+			<version>${felix.http.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.http.jetty</artifactId>
+			<version>${felix.http.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+		</dependency>
+		<!-- Web Console -->
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.webconsole</artifactId>
+			<version>3.1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.scr</artifactId>
+			<version>1.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.configadmin</artifactId>
+			<version>1.2.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.log</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.felix</groupId>
+			<artifactId>org.apache.felix.metatype</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.fileinstall</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+		<!-- Groovy -->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>

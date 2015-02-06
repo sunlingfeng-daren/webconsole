@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<component name="weather">
+	<implementation class="org.danielsoft.webconsole.extension.hello.WeatherServiceImpl" />
+	<service>
+		<provide interface="org.danielsoft.webconsole.extension.hello.WeatherService" />
+	</service>
+</component>

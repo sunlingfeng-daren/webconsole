@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<webconsole-plugin>
+    <name>Hello</name>
+    <description>I'm a very simple plugin</description>
+	<servlet>
+	  <servlet-class>this.is.my.servlet.Servlet</servlet-class>
+	  <url-mapping>/hello</url-mapping>
+	</servlet>
+</webconsole-plugin>

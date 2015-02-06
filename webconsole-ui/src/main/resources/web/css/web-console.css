@@ -1,0 +1,49 @@
+#header {
+	background: url("images/layout-browser-hd-bg.gif") repeat-x scroll
+		center center #7F99BE;
+}
+
+/* shared styles for the ActionColumn icons */
+.x-action-col-cell img {
+	height: 16px;
+	width: 16px;
+	cursor: pointer;
+}
+
+/* custom icon for the "buy" ActionColumn icon */
+.x-action-col-cell img.bundle-start {
+	background-image: url(images/bundle_start.png);
+}
+/* custom icon for the "alert" ActionColumn icon */
+.x-action-col-cell img.bundle-stop {
+	background-image: url(images/bundle_stop.png);
+}
+
+.tabIcon {
+	background-image: url(images/tabs.gif) !important;
+}
+
+.bundleStartIcon {
+	background-image: url(images/bundle_start.png) !important;
+}
+
+.bundleStopIcon {
+	background-image: url(images/bundle_stop.png) !important;
+}
+
+.reloadIcon {
+	background-image: url(images/reload.png) !important;
+}
+
+#header h1 {
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: normal;
+	padding: 5px 10px;
+}
+
+.x-grid-cell-property {
+	vertical-align: top;
+	white-space: nowrap;
+	padding-right: 5px;
+}
