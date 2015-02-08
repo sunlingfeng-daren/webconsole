@@ -1,4 +1,4 @@
-package org.danielsoft.webconsole.extension.weather;
+package org.danielsoft.webconsole.extension.mvc;
 
 import org.danielsoft.webconsole.extension.IAboutWindowExtension;
 import org.danielsoft.webconsole.extension.WebConsoleExtension;
@@ -14,15 +14,11 @@ public class Activator implements BundleActivator, ServiceListener {
 
 	private BundleContext bundleContext;
 	private HttpService httpService;
-	private ServiceRegistration serviceRegistration;
+//	private ServiceRegistration serviceRegistration;
 
 	public void start(BundleContext bundleContext) throws Exception {
-        System.out.print("About Two is stated!");
 		this.bundleContext = bundleContext;
-		serviceRegistration = bundleContext.registerService(
-                IAboutWindowExtension.class.getName(),
-				new AboutTwoWindowExtension(), null);
-		
+
 		String httpServiceFilter = String.format("(objectClass=%s)", HttpService.class.getName());
 		ServiceReference[] httpServiceRefs = bundleContext.getServiceReferences(null, httpServiceFilter);
 		
@@ -41,15 +37,15 @@ public class Activator implements BundleActivator, ServiceListener {
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
-		serviceRegistration.unregister();
-		bundleContext.removeServiceListener(this);
+//		serviceRegistration.unregister();
+//		bundleContext.removeServiceListener(this);
 	}
 
 	void registerResourcesAndServlets(ServiceReference httpServiceRef) {
 		try {
-			System.out.println("Registering resources for hello extension..");
+			System.out.println("Registering resources for total extension..");
 			httpService = (HttpService) bundleContext.getService(httpServiceRef);
-			httpService.registerResources("/webconsole/about/two", "/web", null);
+			httpService.registerResources("/total", "/web", null);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println("Error while registering resources: " + e);

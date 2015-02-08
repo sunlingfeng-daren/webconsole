@@ -179,6 +179,7 @@ Ext.define('WebConsole.LogViewerPanel', {
         //alert(store);
         var componentClass = store.get('componentClass');
         //alert(componentClass);
+        Ext.require(componentClass);
         Ext.create(componentClass).show();
     }
 

@@ -12,6 +12,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <karaf.path>D:/java-develop/container/apache-karaf-3.0.3/deploy</karaf.path>
 	</properties>
 
 	<modules>
@@ -23,6 +24,7 @@
 		<module>webconsole-extension-chart</module>
         <module>webconsole-extension-about-one</module>
         <module>webconsole-extension-about-two</module>
+        <module>webconsole-extension-mvc</module>
 	</modules>
 
 	<dependencyManagement>
@@ -101,10 +103,49 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>deploy</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                        <configuration>
+                            <tasks>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"/>
+
+                                <if>
+                                    <available file="target/${project.artifactId}-${project.version}.jar"/>
+                                    <then>
+                                        <copy file="target/${project.artifactId}-${project.version}.jar"
+                                              todir="${karaf.path}"/>
+                                    </then>
+
+                                    <else>
+                                        <echo>The file does not exist</echo>
+                                    </else>
+                                </if>
+                            </tasks>
+
+                        </configuration>
+                    </execution>
+                </executions>
+                <dependencies>
+                    <dependency>
+                        <groupId>ant-contrib</groupId>
+                        <artifactId>ant-contrib</artifactId>
+                        <version>20020829</version>
+                    </dependency>
+                </dependencies>
+
+            </plugin>
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -113,8 +154,10 @@
 					<artifactId>maven-bundle-plugin</artifactId>
 					<version>2.3.7</version>
 				</plugin>
+
 			</plugins>
 		</pluginManagement>
+
 	</build>
 
 </project>
